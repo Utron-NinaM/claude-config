@@ -1,0 +1,34 @@
+{
+  "version": 2,
+  "plugins": {
+    "atlassian@claude-plugins-official": [
+      {
+        "scope": "user",
+        "installPath": "C:\\Users\\ninam\\.claude\\plugins\\cache\\claude-plugins-official\\atlassian\\9b52fb18e184",
+        "version": "9b52fb18e184",
+        "installedAt": "2026-05-27T15:45:06.423Z",
+        "lastUpdated": "2026-05-27T15:45:06.423Z",
+        "gitCommitSha": "9b52fb18e184edc307ce33f8bf4cdf148dedf1f2"
+      }
+    ],
+    "claude-md-management@claude-plugins-official": [
+      {
+        "scope": "user",
+        "installPath": "C:\\Users\\ninam\\.claude\\plugins\\cache\\claude-plugins-official\\claude-md-management\\1.0.0",
+        "version": "1.0.0",
+        "installedAt": "2026-05-28T09:35:53.808Z",
+        "lastUpdated": "2026-05-28T09:35:53.808Z"
+      }
+    ],
+    "security-guidance@claude-plugins-official": [
+      {
+        "scope": "project",
+        "installPath": "C:\\Users\\ninam\\.claude\\plugins\\cache\\claude-plugins-official\\security-guidance\\2.0.0",
+        "version": "2.0.0",
+        "installedAt": "2026-05-28T11:18:59.235Z",
+        "lastUpdated": "2026-05-28T11:18:59.235Z",
+        "projectPath": "C:\\Dev\\GMT\\Server-puzzle-update-workspace"
+      }
+    ]
+  }
+}

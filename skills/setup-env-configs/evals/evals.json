@@ -1,0 +1,23 @@
+{
+  "skill_name": "setup-env-configs",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Set up environment configs for this ASP.NET Core project at C:\\Temp\\sec-ws\\fixtures\\fixture-fresh\\MyApp",
+      "expected_output": "All 3 pubxml files get EnvironmentName added (Dev→Development, Test→Test, Prod→Production). ValidateEnvironmentName target added to MyApp.csproj. Three stub appsettings env files created. appsettings.Local.json added to .gitignore. Clear summary table shown.",
+      "files": ["C:\\Temp\\sec-ws\\fixtures\\fixture-fresh\\MyApp"]
+    },
+    {
+      "id": 2,
+      "prompt": "Add EnvironmentName to publish profiles and configure appsettings for all environments in C:\\Temp\\sec-ws\\fixtures\\fixture-partial\\BillingService",
+      "expected_output": "Dev pubxml skipped (already has EnvironmentName). Prod pubxml gets EnvironmentName=Production. ValidateEnvironmentName target added to csproj. appsettings.Development.json and appsettings.Production.json created as stubs. appsettings.Test.json skipped (already exists). Summary distinguishes skipped vs added.",
+      "files": ["C:\\Temp\\sec-ws\\fixtures\\fixture-partial\\BillingService"]
+    },
+    {
+      "id": 3,
+      "prompt": "Set up env configs for C:\\Temp\\sec-ws\\fixtures\\fixture-slot\\NotificationApi",
+      "expected_output": "prod-slot pubxml gets EnvironmentName=Production (inferred from 'slot'/'prod' in name). ValidateEnvironmentName target skipped (already present in csproj). Three stub appsettings env files created. gitignore entry skipped (already present). Clean summary showing what was already done vs what was added.",
+      "files": ["C:\\Temp\\sec-ws\\fixtures\\fixture-slot\\NotificationApi"]
+    }
+  ]
+}

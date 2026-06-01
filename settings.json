@@ -1,0 +1,21 @@
+{
+  "permissions": {
+    "allow": [
+      "mcp__claude_ai_Atlassian__*"
+    ]
+  },
+  "enabledPlugins": {
+    "atlassian@claude-plugins-official": true
+  },
+  "extraKnownMarketplaces": {
+    "claude-plugins-official": {
+      "source": {
+        "source": "github",
+        "repo": "anthropics/claude-plugins-official"
+      }
+    }
+  },
+  "autoUpdatesChannel": "latest",
+  "theme": "light",
+  "skipWorkflowUsageWarning": true
+}

@@ -1,0 +1,34 @@
+# Credentials & secrets
+.credentials.json
+mcp-needs-auth-cache.json
+
+# Runtime / session data
+history.jsonl
+.last-cleanup
+policy-limits.json
+session-audit-log.md
+
+# Directories with session/temp data
+sessions/
+cache/
+backups/
+telemetry/
+shell-snapshots/
+session-env/
+debug/
+downloads/
+paste-cache/
+ide/
+security/
+file-history/
+tasks/
+
+# Project session data (keep memory files only)
+projects/*
+!projects/*/
+projects/*/*
+!projects/*/memory/
+!projects/*/memory/**
+
+# Plugin cache
+plugins/cache/plans/
