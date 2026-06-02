@@ -5,6 +5,7 @@ mcp-needs-auth-cache.json
 # Runtime / session data
 history.jsonl
 .last-cleanup
+.last-update-result.json
 policy-limits.json
 session-audit-log.md
 
@@ -33,3 +34,7 @@ projects/*/*
 
 # Plugin cache
 plugins/cache/plans/
+plugins/marketplaces/
+plugins/known_marketplaces.json
+**/__pycache__/
+**/*.pyc

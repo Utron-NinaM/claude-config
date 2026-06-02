@@ -1,7 +1,17 @@
 {
   "permissions": {
     "allow": [
-      "mcp__claude_ai_Atlassian__*"
+      "mcp__claude_ai_Atlassian__*",
+      "Bash(ls*)",
+      "Bash(Get-ChildItem*)",
+      "Bash(cat*)",
+      "Bash(git status*)",
+      "Bash(git log*)",
+      "Bash(git branch*)",
+      "Bash(dotnet --version*)",
+      "Bash(dotnet build*)",
+      "Bash(git rev-parse*)",
+      "Bash(BASE=main*)"
     ]
   },
   "enabledPlugins": {
