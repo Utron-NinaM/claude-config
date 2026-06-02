@@ -22,6 +22,7 @@ ide/
 security/
 file-history/
 tasks/
+plans/
 
 # Project session data (keep memory files only)
 projects/*
