@@ -11,7 +11,15 @@
       "Bash(dotnet --version*)",
       "Bash(dotnet build*)",
       "Bash(git rev-parse*)",
-      "Bash(BASE=main*)"
+      "Bash(BASE=main*)",
+      "Bash(svn diff*)",
+      "Bash(svn info*)"
+    ],
+    "deny": [
+      "Bash(./deploy.sh*)",
+      "Read(**/*.key)",
+      "Read(**/*.pem)",
+      "Read(**/.env*)"
     ]
   },
   "enabledPlugins": {
