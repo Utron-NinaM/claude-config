@@ -49,6 +49,20 @@ existing ? update(record) : add(record);
 
 Apply this to all languages and projects. Never duplicate field assignments across if/else branches when the fields are identical in both branches.
 
+## Agents
+
+Use `file-explorer` (not `Explore`) for all codebase search and exploration tasks. `Explore` is disabled globally.
+
+| Task | Agent |
+|---|---|
+| Find files by pattern | `file-explorer` (quick) |
+| Find where a symbol/route is defined | `file-explorer` (quick) |
+| Explore an unfamiliar part of the codebase | `file-explorer` (medium or very thorough) |
+
+`file-explorer` uses only `Read`, `Glob`, and `Grep` — no Bash, no permission prompts.
+
+---
+
 ## No Magic Numbers or Hardcoded Constants
 
 Do not write numeric values, status codes, string keys, or other domain constants inline in code. Before writing any such value:

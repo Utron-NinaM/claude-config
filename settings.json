@@ -2,20 +2,23 @@
   "permissions": {
     "allow": [
       "mcp__claude_ai_Atlassian__*",
-      "Bash(ls*)",
-      "Bash(Get-ChildItem*)",
-      "Bash(cat*)",
-      "Bash(git status*)",
-      "Bash(git log*)",
-      "Bash(git branch*)",
-      "Bash(dotnet --version*)",
-      "Bash(dotnet build*)",
-      "Bash(git rev-parse*)",
-      "Bash(BASE=main*)",
-      "Bash(svn diff*)",
-      "Bash(svn info*)"
+      "Bash(git *)",
+      "Bash(gh *)",
+      "Bash(dotnet *)",
+      "Bash(npm *)",
+      "Bash(node *)",
+      "Bash(npx *)",
+      "Bash(jira *)",
+      "Bash(acli jira *)",
+      "Bash(Get-ChildItem *)",
+      "Agent",
+      "Skill(uni:fetch-ticket)",
+      "WebFetch(domain:github.com)",
+      "WebFetch(domain:raw.githubusercontent.com)",
+      "WebSearch"
     ],
     "deny": [
+      "Agent(Explore)",
       "Bash(./deploy.sh*)",
       "Read(**/*.key)",
       "Read(**/*.pem)",
@@ -35,5 +38,6 @@
   },
   "autoUpdatesChannel": "latest",
   "theme": "light",
-  "skipWorkflowUsageWarning": true
+  "skipWorkflowUsageWarning": true,
+  "disabledMcpjsonServers": ["carl-mcp"]
 }
