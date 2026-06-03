@@ -12,6 +12,7 @@
       "Bash(acli jira *)",
       "Bash(Get-ChildItem *)",
       "Agent",
+      "Read(**/.claude/**)",
       "Skill(uni:fetch-ticket)",
       "WebFetch(domain:github.com)",
       "WebFetch(domain:raw.githubusercontent.com)",
