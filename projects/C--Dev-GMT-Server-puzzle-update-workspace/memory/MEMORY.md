@@ -1,3 +1,3 @@
 # Memory Index
 
-- [Eliminate duplicate assignments across branches](feedback_eliminate_duplicate_assignments.md) — Use null-coalescing + shared field assignment instead of duplicating fields in if/else branches
+- [Project .claude folder location](project_claude_folder.md) — .claude folder moved to C:\Dev\.claude\ (repo level, not workspace)

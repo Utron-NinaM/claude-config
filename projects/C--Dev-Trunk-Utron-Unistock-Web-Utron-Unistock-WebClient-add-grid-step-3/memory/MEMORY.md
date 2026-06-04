@@ -1,1 +1,1 @@
-- [CSS module over sx for modal styling](feedback_css_over_sx.md) — use CSS modules + className instead of const sx blocks; CSS vars for colors; inline style only for runtime-dynamic values
+# Memory Index

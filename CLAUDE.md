@@ -49,6 +49,22 @@ existing ? update(record) : add(record);
 
 Apply this to all languages and projects. Never duplicate field assignments across if/else branches when the fields are identical in both branches.
 
+## Code Style: Braces
+
+Always write `if`, `else`, `for`, `while`, and similar control-flow statements with curly braces, even when the body is a single line. No braceless one-liners.
+
+```js
+// ✅
+if (isValid) {
+    submit();
+}
+
+// ❌
+if (isValid) submit();
+```
+
+This applies to all languages and projects.
+
 ## Agents
 
 Use `file-explorer` (not `Explore`) for all codebase search and exploration tasks. `Explore` is disabled globally.
@@ -61,7 +77,19 @@ Use `file-explorer` (not `Explore`) for all codebase search and exploration task
 
 `file-explorer` uses only `Read`, `Glob`, and `Grep` — no Bash, no permission prompts.
 
+When `file-explorer` (or any subagent) reads and fully reports on a file, do not re-read that file to verify. Treat the agent's output as authoritative and proceed directly to planning. Only do a targeted re-read if the report is ambiguous or contradicts itself on a specific detail.
+
 ---
+
+## Skip Skills for Trivial Edits
+
+Do not invoke a skill when the task is a mechanical file edit with no ambiguity. Use Read + Edit directly when the target file, the change, and the merge are all clear before the first tool call. Reserve skills for cases with genuine ambiguity (which file to target, complex merging logic, unfamiliar settings).
+
+---
+
+## Dependency Injection: Circular Dependency Check
+
+Before injecting service A into service B, check A's constructor for any dependency that leads back to B (directly or transitively). A single Grep of A's constructor is enough. Never recommend the injection without doing this check first.
 
 ## No Magic Numbers or Hardcoded Constants
 
@@ -71,3 +99,13 @@ Do not write numeric values, status codes, string keys, or other domain constant
 3. If none exists — create one first, then use it.
 
 If the right file or scope for the new constant is not obvious, ask before placing it. Never use the raw value as a placeholder with intent to "name it later."
+
+## Windows: No-BOM JSON and PowerShell from Bash
+
+When writing JSON files on Windows for `acli` or similar CLI tools, use:
+```powershell
+[System.IO.File]::WriteAllText($path, $json, [System.Text.UTF8Encoding]::new($false))
+```
+The `$false` disables the BOM. Never use `Out-File -Encoding utf8` — it silently adds a BOM that causes `acli` to reject the file with "json: invalid format".
+
+When running PowerShell commands from the Bash tool, always wrap with `powershell.exe -Command "..."`. Never use PowerShell variable syntax (`$env:TEMP`) directly in a Bash invocation — it fails silently with a syntax error.

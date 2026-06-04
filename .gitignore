@@ -8,6 +8,7 @@ history.jsonl
 .last-update-result.json
 policy-limits.json
 session-audit-log.md
+session-retro-log.md
 
 # Directories with session/temp data
 sessions/
