@@ -14,6 +14,7 @@
       "Bash(npx *)",
       "Bash(jira *)",
       "Bash(acli jira *)",
+      "Bash(acli jira workitem view * --fields *)",
       "Bash(powershell *)",
       "Bash(Get-ChildItem *)",
       "Agent",
