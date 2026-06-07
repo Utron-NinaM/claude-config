@@ -85,6 +85,20 @@ When `file-explorer` (or any subagent) reads and fully reports on a file, do not
 
 Do not invoke a skill when the task is a mechanical file edit with no ambiguity. Use Read + Edit directly when the target file, the change, and the merge are all clear before the first tool call. Reserve skills for cases with genuine ambiguity (which file to target, complex merging logic, unfamiliar settings).
 
+**This rule does NOT apply to workflow orchestration skills.** The following skills are process orchestrators — they must always be invoked via the Skill tool when their trigger condition is met, regardless of how simple the underlying action seems:
+
+| Skill | Trigger |
+|---|---|
+| `uni:commit` | User says "commit" |
+| `uni:create-branch` | End of PLAN phase approval |
+| `uni:fetch-ticket` | Ticket ID mentioned at the start of a task |
+| `uni:review-pr` | User asks to review changes / "it works" / "approved" |
+| `uni:static-analyze` | User asks for static analysis |
+| `uni:jira-comment` | User asks to add a Jira comment |
+| `uni:jira-resolve` | User asks to resolve the ticket |
+
+Never replace these with raw git commands, acli calls, or direct tool use — doing so silently skips the review, Jira, and cleanup steps they orchestrate.
+
 ---
 
 ## Dependency Injection: Circular Dependency Check
