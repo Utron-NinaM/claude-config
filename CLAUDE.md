@@ -79,6 +79,17 @@ Use `file-explorer` (not `Explore`) for all codebase search and exploration task
 
 When `file-explorer` (or any subagent) reads and fully reports on a file, do not re-read that file to verify. Treat the agent's output as authoritative and proceed directly to planning. Only do a targeted re-read if the report is ambiguous or contradicts itself on a specific detail.
 
+### Skills & Task Routing
+
+| Task | Use |
+|------|-----|
+| Verify a change works in the running app | `/verify` |
+| Review a PR or diff for bugs | `/code-review` |
+| Explore an unfamiliar part of the codebase | `file-explorer` (medium or very thorough) |
+| Plan a multi-file feature before coding | `Plan` agent |
+| Research a library or external API | `deep-research` agent |
+| Find where a symbol/route/endpoint is defined | `file-explorer` (quick) |
+
 ---
 
 ## Skip Skills for Trivial Edits
