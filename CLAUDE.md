@@ -74,10 +74,11 @@ Use `file-explorer` (not `Explore`) for all codebase search and exploration task
 | Find files by pattern | `file-explorer` (quick) |
 | Find where a symbol/route is defined | `file-explorer` (quick) |
 | Explore an unfamiliar part of the codebase | `file-explorer` (medium or very thorough) |
+| Read a known file at a known path | `Read` directly (with offset+limit if large) — never spawn an agent |
 
 `file-explorer` uses only `Read`, `Glob`, and `Grep` — no Bash, no permission prompts.
 
-When `file-explorer` (or any subagent) reads and fully reports on a file, do not re-read that file to verify. Treat the agent's output as authoritative and proceed directly to planning. Only do a targeted re-read if the report is ambiguous or contradicts itself on a specific detail.
+**Before issuing any Read tool call:** check whether a subagent already reported on that file this session. If yes — stop. Use the agent's output directly. Re-reading is only allowed if the report was ambiguous or self-contradictory on a specific detail. The urge to "just confirm line X" is the violation, not the exception.
 
 ### Skills & Task Routing
 
